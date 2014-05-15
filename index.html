@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JSFinal.html</title>
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--Javascript-->
+    <script type='text/javascript' src="vendor/js/jquery-latest.min.js"></script>
+    <script src="vendor/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="vendor/js/iracing_script.js" type="text/javascript"></script>
+    <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js" type="text/javascript"></script>
+    <script src="vendor/js/validator.js" type="text/javascript"></script>
+    <script src="final.js" type="text/javascript" charset="utf-8"></script>
+
+    <!--CSS-->
+    <link href="//netdna.bootstrapcdn.com/bootswatch/3.1.1/slate/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="final.css" type="text/css">
+</head>
+
+<body>
+    <!-- Modal ** This is the modal for the contact form.  The actual form is grabbed from contact.html-->
+    <div class="modal fade" id="modal-contact-form" tabindex="-1" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <h3>Modal Body</h3>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Modal -->
+        <!--Start Navigation-->
+        <div class="navbar navbar-primary navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">IRacing Setups</a>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="#about">Info</a>
+                        </li>
+                        <li><a href="#roadPanel">Road Cars</a>
+                        </li>
+                        <li><a href="#ovalPanel">Oval Cars</a>
+                        </li>
+                        <li><a href="contact.html" data-toggle="modal" data-target="#modal-contact-form">Contact me!!</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--End Navigation-->
+        <!-- Video player.  Lots of time was spent getting the video, overlay, and text bar to line up correctly, and play nice with each other.-->
+        <!--Start Video Player-->
+        <section class="header-section video-section text-center">
+            <div class="pattern-overlay">
+                <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch_popup?v=FUCMLgs4X2M', containment:'.video-section', autoPlay:true, mute:true, opacity:1}"></a>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="bar">
+                                <h1>IRacing Setups</h1>
+                                <h3>Download setups for your favorite car here!</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" page-scroll text-center col-md-8 col-md-offset-2">
+                    <a class="btn btn-circle " href="#about">
+                        <i class=" fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!--End Video Player-->
+        <!--Main Content-->
+        <section id="about" class="container jumbotron top20 intro">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="text-center">
+                        <h2>IRacing Setups</h2>
+                    </div>
+                    <blockquote>
+                        <p>Choose the style of racing you prefer, Road or Oval, then pick your car from the available choices.</p>
+                    </blockquote>
+                    <blockquote>
+                        <p>Look at some screenshots, click on the last shot to see the setup, then click on that image to download it. Have Fun!</p>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+        <!-- Collapsable headers. Not really needed after I added the nav bar, but I spent a lot of time getting them to work correctly, so I left them collapsible. The containers under each of them is where all the panels do once they are generated. -->
+            <div class="container col-md-10 col-md-offset-1 ">
+                <div class="row  text-center collapse in" id="roadRow">
+                    <div class="panel-group" id="accordian">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h1 id="roadPanel" class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                              Road Cars
+                              </a>
+                                </h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="collapseOne" class="collapse in" data-parent="#accordion" href="#collapseOne">
+                        <div class="gcars2">
+                        </div>
+                    </div>
+                </div>
+                <div class="row  text-center collapse in" id="ovalRow">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h1 id="ovalPanel" class="panel-title ">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                              Oval Cars
+                        </a>
+                            </h1>
+                        </div>
+                    </div>
+                    <div id="collapseTwo" class="collapse in" data-parent="#accordion" >
+                        <div class="gcars1">
+                        </div>
+                    </div>
+                </div>
+                <div id="footer" class="text-center">
+                    <p class="text-muted">Brought to you by Matt Thompson, Bootstrap, Stack Overflow, and IRacing.com</p>
+                </div>
+            </div>
+<!-- this is the modal for the thumbnails. -->
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <img id="mimg" src="">
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!--/.modal-dialog -->
+            </div><!-- /.modal -->
+
+</body>
+
+</html>
